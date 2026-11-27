@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Table('preguntas', timestamps: false)]
-#[Fillable(['texto', 'tipo', 'seccion', 'orden'])]
+#[Table('preguntas', timestamps: true)]
+#[Fillable(['texto', 'tipo', 'seccion', 'orden', 'activa'])]
 class Pregunta extends Model
 {
     use HasFactory;
@@ -31,6 +31,7 @@ class Pregunta extends Model
     {
         return [
             'orden' => 'integer',
+            'activa' => 'boolean',
         ];
     }
 }
